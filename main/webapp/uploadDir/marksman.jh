@@ -1,0 +1,19 @@
+
+entity MarksDiff{
+context String,
+markAsOf LocalDate,
+mainEnv Environment
+compareEnv Environment,
+symbol String,
+key String required
+mainEnvValue String
+compareEnvValue String
+createdTimestamp LocalDate required
+}
+
+enum Environment {
+    DEV, UAT, PROD
+}
+
+paginate MarksDiff with pagination
+service all with serviceImpl
